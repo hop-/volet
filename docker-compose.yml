@@ -38,7 +38,8 @@ services:
       DB_USER: ${POSTGRES_DB_USER}
       DB_PASSWD: ${POSTGRES_DB_PASSWORD}
       DB_NAME: ${POSTGRES_DB_USER}
-      JWT_SECRET: ${AUTH_JWT_SECRET}
+      JWT_PRIVATE_KEY: ${JWT_PRIVATE_KEY}
+      JWT_PUBLIC_KEY: ${JWT_PUBLIC_KEY}
     ports:
       - 3010:3000
     depends_on:
@@ -55,6 +56,7 @@ services:
       DB_USER: ${MONGODB_DB_USER}
       DB_PASSWD: ${MONGODB_DB_PASSWORD}
       DB_NAME: account-service
+      JWT_KEY: ${JWT_PUBLIC_KEY}
     ports:
       - 3011:3000
     depends_on:
